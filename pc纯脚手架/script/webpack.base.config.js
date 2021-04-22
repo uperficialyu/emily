@@ -115,7 +115,7 @@ const webpackConfigBase = {
   plugins: [
     // 将打包后的资源注入到html文件内
     new HtmlWebpackPlugin({
-      template: resolve('../app/template.html'),
+      template: resolve('../app/index.html'),
       title: 'Caching'
     }),
 
@@ -123,6 +123,7 @@ const webpackConfigBase = {
       from: resolve('../app/polyfill.js'),
       to: resolve('../dist/polyfill.js'),
     }]),
+
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

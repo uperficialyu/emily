@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@import './public.scss';
+
+/********** Main theme colors **********/
+$priceHColor: #CD4349;
+$priceLColor: #1DBF5E;
+// 背景色，适用于页面
+$ed-page-bgcolor-primary: #F5F2EF;
+// 次级背景，适用于二级标题栏背景
+$ed-page-bgcolor-secondary: #2b2b2b;
+// 头部背景，单行背景
+$ed-page-bgcolor-line: #FFFFFF;
+
+// 主标题，重要信息文字
+$ed-text-primary: #432B23;
+// 二级标题、次要信息文字
+$ed-text-secondary: #A17568;
+// 用于弱提示 或者不可输入状态
+$ed-text-auxiliary: #D5B9A2;
+// 用于收益，上涨等文字或者高亮区域
+$ed-text-up: #CD4349;
+// 用于下跌，亏损，购买成功
+$ed-text-down: #1DBF5E;
+// 用于警示
+$ed-text-warning: #E2A213;
+
+// 描边颜色
+$ed-border-color: #E5DAD1;
+// 适用于单行分割线
+$ed-border-color-secondary: #E5DAD1;
+
+// 按钮颜色及边框
+$ed-button-bg-color: #A17568;
+$ed-button-border-color: #A17568;
+
+$theme-color: #F5F2EF;
+// 字号
+// 用于特殊数字（如输入取款密码等数据） 
+$ed-fz-password: pxToRem(32);
+// 用于收益率的显示
+$ed-fz-rate: pxToRem(30);
+// 用于交易时的输入金额
+$ed-fz-amount: pxToRem(24);
+// 用于导航栏标题文字, 提示成功失败文字
+$ed-fz-text-primary: pxToRem(18);
+// 用于正文，主要段落以及主要文字
+$ed-fz-text-content: pxToRem(16);
+// 用于辅助性文字，以及导航栏2侧小字 
+$ed-fz-text-auxiliary1: pxToRem(14);
+// 辅助信息文字，比如预计文件信息
+$ed-fz-text-auxiliary2: pxToRem(13);
+
+// 页面图标大小
+$ed-icon-primary: pxToRem(24);
+// 箭头图标大小
+$ed-icon-arrow: pxToRem(16);
+
+// 页面每行高度
+$ed-height-row: pxToRem(45);
+// 页面左右两边留白间距
+$ed-page-space: size(15);
+
