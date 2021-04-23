@@ -1,0 +1,81 @@
+.iphone-x-bottom {}
+.iphone-x-bottom-fixed {}
+.iphone-x-height {}
+.iphone-x-bottom-op {}
+@supports (padding: max(0px, 1px)) {
+  /* iphonex、xs */
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .iphone-x-bottom-fixed {
+      padding-bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      padding-bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-height{
+      height: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      height: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+    .iphone-x-bottom {
+      bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-bottom-op{
+      bottom: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      bottom: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+  }
+  /* iphone xr */
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    .iphone-x-bottom-fixed {
+      padding-bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      padding-bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-height{
+      height: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      height: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+    .iphone-x-bottom {
+      bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-bottom-op{
+      bottom: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      bottom: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+  }
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    .iphone-x-bottom-fixed {
+      padding-bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      padding-bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-height{
+      height: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      height: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+    .iphone-x-bottom {
+      bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-bottom-op{
+      bottom: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      bottom: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+  }
+  /* iphone xs-max */
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .iphone-x-bottom-fixed {
+      padding-bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      padding-bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-height{
+      height: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      height: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+    .iphone-x-bottom {
+      bottom: max(constant(safe-area-inset-bottom, 34px), 34px);
+      bottom: max(env(safe-area-inset-bottom, 34px), 34px);
+    }
+    .iphone-x-bottom-op{
+      bottom: max(calc(1.4rem + constant(safe-area-inset-bottom, 34px)), 84px);
+      bottom: max(calc(1.4rem + env(safe-area-inset-bottom, 34px)), 84px);
+    }
+  }
+}

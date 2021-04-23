@@ -1,0 +1,189 @@
+//Funtion
+$scale: 1;
+$unit:  1px;
+
+// 設置size不會受手機屏幕影響
+@function size($n) {
+    @return $n * $scale * $unit;
+}
+
+$baseFontSize: 37.5;
+// 常规中英文字 苹方(安卓使用系统默认字体)
+$fontFamily: "PingFang-SC-Medium", "Microsoft Yahei", "Hiragino Sans GB", Helvetica;
+
+// 設置pxToRem會隨著屏幕大小縮放
+@function pxToRem($px){
+    @return $px / $baseFontSize *1rem;
+};
+
+// Border radius
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius; 
+    border-radius: $radius;
+}
+
+// Box shadow
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Transform
+@mixin transform-style($style){
+    -webkit-transform-style:$style;
+    transform-style:$style;
+}
+// Gradients
+@mixin linear-gradient($direction,$color1,$color2){
+    background: -webkit-linear-gradient($direction,$color1,$color2); 
+    background: linear-gradient($direction,$color1,$color2);
+}
+
+@mixin directional-gradient($color-from, $color-to, $deg: 45deg) {
+  background-color: $color-from; // Old browsers
+  background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0%,$color-from), color-stop(100%,$color-to)); // Chrome, Safari4+
+  background-image: -webkit-linear-gradient(45deg, $color-from 0%, $color-to 100%);           // Chrome10+, Safari5.1+
+  background-image:         linear-gradient(45deg, $color-from 0%, $color-to 100%);     // W3C
+}
+
+
+// Transforms
+// --------------------------------------------------
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+          transform: $transform;
+}
+
+// Gradients(浅-深-浅的渐变底边框线)
+@mixin linear-gradient-shallowDeep($direction,$color1,$color2,$color3) {
+  background: -webkit-linear-gradient($direction, $color1, $color2, $color3);
+  background: linear-gradient($direction, $color1, $color2, $color3);
+}
+
+
+// Transitions
+// --------------------------------------------------
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-property($property...) {
+  -webkit-transition-property: $property;
+          transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -webkit-transition-duration: $duration;
+          transition-duration: $duration;
+}
+@mixin transition-timing-function($function...) {
+  -webkit-transition-timing-function: $function;
+          transition-timing-function: $function;
+}
+
+
+// Animations
+// --------------------------------------------------
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+          animation-name: $name;
+}
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+          animation-duration: $duration;
+}
+@mixin animation-direction($direction) {
+  -webkit-animation-direction: $direction;
+          animation-direction: $direction;
+}
+
+
+// Misc
+// --------------------------------------------------
+@mixin hairline($type, $color, $offset) {
+  @if $type == single {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-position: $offset 100%;
+
+  } @else if $type == double {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>"),
+                      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-position: $offset 100%, $offset 0;
+  }
+  background-repeat: no-repeat;
+}
+
+// 半像素邊框
+@mixin borderTop($color){
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $color;
+    content: '';
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 top;
+    transform-origin: 0 top;
+
+}
+
+@mixin borderBottom($color){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $color;
+    content: '';
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 bottom;
+    transform-origin: 0 bottom;
+}
+
+@mixin borderRight($color){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: $color;
+    content: '';
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    -webkit-transform-origin: right 0;
+    transform-origin: right 0;
+}
+
+@mixin borderLeft($color){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: $color;
+    content: '';
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    -webkit-transform-origin: left 0;
+    transform-origin: left 0;
+}
+
+@mixin border($color,$radius){
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $color;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}

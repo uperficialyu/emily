@@ -1,0 +1,179 @@
+@import 'default';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  //禁止拷贝/复制行为
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.5em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.page-content .iconfont{
+  font-size: $ed-icon-primary;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  background-color: $ed-page-bgcolor-primary;
+  font-size: $ed-fz-text-content;
+  font-family: $fontFamily;
+  color: $ed-text-primary;
+  overflow: hidden;
+  position: relative;
+}
+
+// 标题栏
+#HeaderWarp.header {
+  width: 100vw;
+  height: size(45);
+  background: $ed-page-bgcolor-line;
+  color: $ed-text-primary;
+  font-size: $ed-fz-text-primary; 
+  border-bottom: 1px solid #d5d3d0;
+}
+
+// 显示内容区域(屏幕高度-头部高度-底部高度)
+.page-content {
+  position: relative;
+  height: calc(100vh - 45px - 60px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 无头部 有底部
+.page-content.no-header {
+  height: calc(100vh - 60px);
+}
+
+// 有头部 无底部
+.page-content.no-footer {
+  height: calc(100vh - 45px);
+}
+
+// 页面底部
+.footer {
+  width: 100vw;
+  height: size(60);
+  flex: 1;
+  background: $ed-page-bgcolor-line;
+  border-top: 1px solid $ed-border-color;
+  padding: 0 pxToRem(17);
+}
+
+// 单行左右布局
+.line-flex-start-end {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+// 单行等分布局，强制等分，超出宽度的元素强制隐藏
+.line-flex-equal-divide {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+  &:before, &:after {
+    content: '';
+    display: block;
+  }
+  justify-content: space-evenly;
+  text-align: center;
+
+  >div,
+  >a {
+    flex: 1;
+    -webkit-flex: 1;
+    overflow: hidden;
+  }
+}
+
+.line-flex-start-end.line-flex-children-stretch,
+.line-flex-equal-divide.line-flex-children-stretch {
+  align-items: stretch;
+  -webkit-align-items: stretch;
+
+  >div {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+}
+
+// 页面左右布局行
+.line-row {
+  padding: 0 $ed-page-space;
+  height: $ed-height-row;
+  border-bottom: 0.5px solid $ed-border-color;
+  background: $ed-page-bgcolor-line;
+}
+
+// 内容超过两行省略
+.mulline-ellipsis {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+// 产品名称+产品ID内容自适应，超出换行展示
+.proName-block {
+  height: fit-content;
+  min-height: $ed-height-row;
+  line-height: pxToRem(24);
+  padding-top: pxToRem(6);
+  padding-bottom: pxToRem(6);
+}
+
+// EdToast设置层级
+#toast .toast-box {
+  z-index: 99!important;
+}
+
+
+// 请求loading设置层级
+#toast .range-mask {
+  z-index: 10!important;
+}
