@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack server --config scripts/webpack.config.js",
-    "build": "npx webpack"
+    "start": "cross-env NODE_ENV=development webpack server --config scripts/webpack.config.dev.js",
+    "build": "cross-env NODE_ENV=production npx webpack --config scripts/webpack.config.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
   "devDependencies": {
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "cross-env": "^7.0.3",
     "awesome-typescript-loader": "^5.2.1",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "file-loader": "^6.2.0",
