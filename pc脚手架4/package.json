@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack server",
+    "start": "webpack server --config scripts/webpack.config.js",
     "build": "npx webpack"
   },
   "keywords": [],
